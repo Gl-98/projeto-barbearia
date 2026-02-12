@@ -123,6 +123,45 @@ npm run dev
 # Aplicação rodará em http://localhost:3000
 ```
 
+## 🌐 Deploy Profissional (Vercel + Render)
+
+### Frontend (Vercel)
+1. Crie um novo projeto no Vercel e selecione este repositório.
+2. Defina o **Root Directory** como `frontend`.
+3. Variáveis de ambiente no Vercel:
+
+```
+VITE_FIREBASE_API_KEY=
+VITE_FIREBASE_AUTH_DOMAIN=
+VITE_FIREBASE_PROJECT_ID=
+VITE_FIREBASE_STORAGE_BUCKET=
+VITE_FIREBASE_MESSAGING_SENDER_ID=
+VITE_FIREBASE_APP_ID=
+VITE_API_BASE_URL=https://SEU-BACKEND.onrender.com/api
+```
+
+### Backend (Render)
+1. Crie um novo **Web Service** no Render e selecione este repositório.
+2. Defina o **Root Directory** como `backend`.
+3. Build Command: `npm ci`
+4. Start Command: `npm start`
+5. Variáveis de ambiente no Render:
+
+```
+PORT=5000
+NODE_ENV=production
+FIREBASE_PROJECT_ID=
+FIREBASE_SERVICE_ACCOUNT=
+TWILIO_ACCOUNT_SID=
+TWILIO_AUTH_TOKEN=
+TWILIO_WHATSAPP_NUMBER=
+GOOGLE_CALENDAR_KEY_FILE=./google-calendar-key.json
+ADMIN_SECRET_KEY=admin@barbearia123
+```
+
+> Observação: Para o Google Calendar, envie o arquivo JSON como secret no Render
+> e ajuste `GOOGLE_CALENDAR_KEY_FILE` para o caminho configurado no serviço.
+
 ## 📚 Estrutura do Projeto
 
 ```

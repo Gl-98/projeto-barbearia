@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: barbearia-backend
+    env: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: FIREBASE_PROJECT_ID
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT
+        sync: false
+      - key: TWILIO_ACCOUNT_SID
+        sync: false
+      - key: TWILIO_AUTH_TOKEN
+        sync: false
+      - key: TWILIO_WHATSAPP_NUMBER
+        sync: false
+      - key: GOOGLE_CALENDAR_KEY_FILE
+        value: ./google-calendar-key.json
+      - key: ADMIN_SECRET_KEY
+        value: admin@barbearia123
